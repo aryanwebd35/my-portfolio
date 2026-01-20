@@ -290,7 +290,14 @@ const PORTFOLIO_DATA = {
       desc: "Streamlined online food ordering application for college cafes featuring real-time order tracking and chatbot support.",
       stack: ["React.js", "Node.js", "Tailwind CSS", "JavaScript", "HTML"],
       link: "https://github.com/aryanwebd35/Food-Factory"
-    }
+    },
+    {
+  title: "Notes WebApp",
+  desc: "A feature-rich collaborative note-taking application with real-time syncing, rich text editing, secure authentication, and cloud-based media storage.",
+  stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+  link: "https://github.com/aryanwebd35/Notes-WebApp",
+  deployment: "https://notes35-app.vercel.app"
+}
   ],
   skills: [
     { name: "C/C++", icon: <Terminal className="w-4 h-4" /> },
