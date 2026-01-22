@@ -277,27 +277,30 @@ const PORTFOLIO_DATA = {
       title: "MNNIT Insights",
       desc: "AI-powered campus feedback platform utilizing OpenAI to summarize student opinions and facilitate administrative improvements.",
       stack: ["Next.js", "Tailwind CSS", "MongoDB", "NextAuth", "Resend", "OpenAI API"],
-      link: "https://github.com/aryanwebd35/MNNIT-Insights"
+      link: "https://github.com/aryanwebd35/MNNIT-Insights",
+      deployment: ""
     },
     {
       title: "PsychoCorp",
       desc: "Comprehensive mental health platform connecting users with similar conditions and professional therapists for support.",
       stack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
-      link: "https://github.com/aryanwebd35/PsychoCorp"
+      link: "https://github.com/aryanwebd35/PsychoCorp",
+      deployment: ""
     },
     {
       title: "Food Factory",
       desc: "Streamlined online food ordering application for college cafes featuring real-time order tracking and chatbot support.",
       stack: ["React.js", "Node.js", "Tailwind CSS", "JavaScript", "HTML"],
-      link: "https://github.com/aryanwebd35/Food-Factory"
+      link: "https://github.com/aryanwebd35/Food-Factory",
+      deployment: "https://food-factory35.vercel.app"
     },
     {
-  title: "Notes WebApp",
-  desc: "A feature-rich collaborative note-taking application with real-time syncing, rich text editing, secure authentication, and cloud-based media storage.",
-  stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-  link: "https://github.com/aryanwebd35/Notes-WebApp",
-  deployment: "https://notes35-app.vercel.app"
-}
+      title: "Notes WebApp",
+      desc: "A feature-rich collaborative note-taking application with real-time syncing, rich text editing, secure authentication, and cloud-based media storage.",
+      stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+      link: "https://github.com/aryanwebd35/Notes-WebApp",
+      deployment: "https://notes35-app.vercel.app"
+    }
   ],
   skills: [
     { name: "C/C++", icon: <Terminal className="w-4 h-4" /> },
@@ -731,29 +734,52 @@ const App = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-1000">
                 {PORTFOLIO_DATA.projects.map((project, idx) => (
                   <TiltCard key={idx} className="group bg-white/80 dark:bg-slate-800 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full border border-indigo-50 dark:border-slate-700">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="p-2 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg text-indigo-600 dark:text-indigo-400">
-                        <Code className="w-6 h-6" />
+                    <div className="flex flex-col h-full relative z-10">
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="flex-1 pr-4">
+                          <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                            {project.title}
+                          </h3>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          {project.deployment && (
+                            <a
+                              href={project.deployment}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium transition-all hover:scale-105 shadow-md shadow-indigo-500/20"
+                              title="Live Demo"
+                            >
+                              <ExternalLink className="w-3.5 h-3.5" />
+                              <span className="hidden sm:inline">Live Demo</span>
+                            </a>
+                          )}
+
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 text-slate-700 dark:text-white border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 text-xs font-medium transition-all hover:scale-105"
+                            title="View Code"
+                          >
+                            <Github className="w-3.5 h-3.5" />
+                            <span>Code</span>
+                          </a>
+                        </div>
                       </div>
-                      <a href={project.link} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors z-20">
-                        <Github className="w-5 h-5" />
-                      </a>
-                    </div>
 
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                      {project.title}
-                    </h3>
+                      <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">
+                        {project.desc}
+                      </p>
 
-                    <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">
-                      {project.desc}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.stack.map((tech, tIdx) => (
-                        <span key={tIdx} className="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                          {tech}
-                        </span>
-                      ))}
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {project.stack.map((tech, tIdx) => (
+                          <span key={tIdx} className="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </TiltCard>
                 ))}
@@ -863,7 +889,7 @@ const App = () => {
         <ChatBot />
 
       </div>
-    </div>
+    </div >
   );
 };
 
