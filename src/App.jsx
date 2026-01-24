@@ -278,14 +278,14 @@ const PORTFOLIO_DATA = {
       desc: "AI-powered campus feedback platform utilizing OpenAI to summarize student opinions and facilitate administrative improvements.",
       stack: ["Next.js", "Tailwind CSS", "MongoDB", "NextAuth", "Resend", "OpenAI API"],
       link: "https://github.com/aryanwebd35/MNNIT-Insights",
-      deployment: ""
+      deployment: "https://mnnit-insights.vercel.app"
     },
     {
       title: "PsychoCorp",
       desc: "Comprehensive mental health platform connecting users with similar conditions and professional therapists for support.",
       stack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
       link: "https://github.com/aryanwebd35/PsychoCorp",
-      deployment: ""
+      deployment: "https://psychocorp.vercel.app"
     },
     {
       title: "Food Factory",
